@@ -1,30 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>张三的博客</title>
-<style>
-body {font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333;}
-header, footer {background: #6c7ae0; color: white; text-align: center; padding: 1em;}
-article {max-width: 800px; margin: 20px auto; padding: 20px; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
-h1, h2 {color: #6c7ae0;}
-p {line-height: 1.6;}
-</style>
+<title>登录</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-<h1>欢迎来到张三的博客</h1>
-<p>重庆理工大学 | 大数据专业</p>
-</header>
-<article>
-<h2>关于我</h2>
-<p>你好！我是张三，目前就读于重庆理工大学的大数据专业。我对数据分析、机器学习等领域充满热情，并且希望通过这个博客分享我的学习经历和一些有趣的项目。</p>
-<h2>最新文章</h2>
-<h3>如何利用Python进行数据清洗</h3>
-<p>在处理实际问题时，我们经常遇到的数据并不总是干净整洁的。这篇文章将向你介绍使用Python中的Pandas库来进行高效的数据清洗...</p>
-</article>
-<footer>
-<p>版权所有 &copy; 2023 张三</p>
-</footer>
+<div class="login-form">
+  <h2>欢迎回来！</h2>
+  <form id="loginForm">
+    <label for="username">用户名:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">密码:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="submit">登录</button>
+  </form>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
