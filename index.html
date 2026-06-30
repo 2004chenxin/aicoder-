@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>在线商城系统</title>
+  <title>电影平台</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
 </head>
 <body>
   <div id="app">
-    <h1>Welcome to Online Shop</h1>
-    <ul>
-      <li v-for="product in products" :key="product.id">
-        {{ product.name }}
-      </li>
+    <h1>电影列表</h1>
+    <ul v-for="movie in movies" :key="movie.id">
+      <li>{{ movie.title }} - {{ movie.year }}</li>
     </ul>
   </div>
   <script>
 const App = {
   data() {
     return {
-      products: []
+      movies: []
     }
   },
   created() {
-    fetch('/api/products')
-      .then(res => res.json())
-      .then(data => (this.products = data));
+    this.$axios.get('/api/movies')
+      .then(response => {
+        [] = response.data;
+      });
   }
 }
     Vue.createApp(App).mount('#app');
