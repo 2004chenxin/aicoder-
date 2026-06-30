@@ -1,44 +1,41 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>我的博客</title>
-<style>
-  body {font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0;}
-  .header {background: #2c3e50; color: white; text-align: center; padding: 1em 0;}
-  .container {width: 80%; margin: auto; overflow: hidden;}
-  .main {float: left; width: 70%; box-sizing: border-box; padding: 20px;}
-  .sidebar {float: right; width: 25%; padding: 20px; background: #ddd; box-sizing: border-box;}
-  .post {margin-bottom: 20px; background: white; padding: 20px; border-radius: 5px;}
-  .footer {clear: both; text-align: center; padding: 10px 0; background: #333; color: white; position: fixed; bottom: 0; width: 100%;}
-</style>
+    <meta charset="UTF-8">
+    <title>登录注册 Demo</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .container { max-width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input { width: 100%; padding: 8px; margin: 8px 0; }
+        button { width: 100%; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button.toggle { background: #008CBA; margin-top: 8px; }
+    </style>
 </head>
 <body>
-<div class="header"><h1>欢迎来到我的博客</h1></div>
-<div class="container">
-  <section class="main">
-    <article class="post">
-      <h2>第一篇文章标题</h2>
-      <p>这是我的第一篇博客文章的内容。我在这里分享了我的想法和经验。</p>
-    </article>
-    <article class="post">
-      <h2>第二篇文章标题</h2>
-      <p>这是另一篇博客文章，讨论了另一个话题。</p>
-    </article>
-  </section>
-  <aside class="sidebar">
-    <h3>关于我</h3>
-    <p>我是热爱技术的人，喜欢通过博客来分享知识。</p>
-  </aside>
-</div>
-<footer class="footer">版权所有 &copy; 2023 我的博客</footer>
-<script>
-  // 示例：简单的交互逻辑
-  document.querySelectorAll('.post').forEach(post => {
-    post.addEventListener('click', function() {
-      alert('你点击了一篇文章！');
-    });
-  });
-</script>
+    <div class="container">
+        <h2 id="title">登录</h2>
+        <input id="username" placeholder="用户名" />
+        <input id="password" type="password" placeholder="密码" />
+        <button id="submitBtn">登录</button>
+        <button class="toggle" id="toggleBtn">切换到注册</button>
+    </div>
+    <script>
+        let isLogin = true;
+        const title = document.getElementById("title");
+        const submitBtn = document.getElementById("submitBtn");
+        const toggleBtn = document.getElementById("toggleBtn");
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+
+        submitBtn.onclick = function() {
+            alert((isLogin ? "登录" : "注册") + "：用户名=" + username.value + ", 密码=" + password.value);
+        };
+        toggleBtn.onclick = function() {
+            isLogin = !isLogin;
+            title.textContent = isLogin ? "登录" : "注册";
+            submitBtn.textContent = isLogin ? "登录" : "注册";
+            toggleBtn.textContent = isLogin ? "切换到注册" : "切换到登录";
+        };
+    </script>
 </body>
 </html>
