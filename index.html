@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>登录</title>
-<link rel="stylesheet" href="styles.css">
+<title>我的博客</title>
+<style>
+  body {font-family: Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 0;}
+  .header {background: #2c3e50; color: white; text-align: center; padding: 1em 0;}
+  .container {width: 80%; margin: auto; overflow: hidden;}
+  .main {float: left; width: 70%; box-sizing: border-box; padding: 20px;}
+  .sidebar {float: right; width: 25%; padding: 20px; background: #ddd; box-sizing: border-box;}
+  .post {margin-bottom: 20px; background: white; padding: 20px; border-radius: 5px;}
+  .footer {clear: both; text-align: center; padding: 10px 0; background: #333; color: white; position: fixed; bottom: 0; width: 100%;}
+</style>
 </head>
 <body>
-<div class="login-form">
-  <h2>欢迎回来！</h2>
-  <form id="loginForm">
-    <label for="username">用户名:</label><br>
-    <input type="text" id="username" name="username" required><br>
-    <label for="password">密码:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
-    <button type="submit">登录</button>
-  </form>
+<div class="header"><h1>欢迎来到我的博客</h1></div>
+<div class="container">
+  <section class="main">
+    <article class="post">
+      <h2>第一篇文章标题</h2>
+      <p>这是我的第一篇博客文章的内容。我在这里分享了我的想法和经验。</p>
+    </article>
+    <article class="post">
+      <h2>第二篇文章标题</h2>
+      <p>这是另一篇博客文章，讨论了另一个话题。</p>
+    </article>
+  </section>
+  <aside class="sidebar">
+    <h3>关于我</h3>
+    <p>我是热爱技术的人，喜欢通过博客来分享知识。</p>
+  </aside>
 </div>
-<script src="script.js"></script>
+<footer class="footer">版权所有 &copy; 2023 我的博客</footer>
+<script>
+  // 示例：简单的交互逻辑
+  document.querySelectorAll('.post').forEach(post => {
+    post.addEventListener('click', function() {
+      alert('你点击了一篇文章！');
+    });
+  });
+</script>
 </body>
 </html>
